@@ -1,7 +1,8 @@
-import { BASE_URL, API_KEY, SESSION_ID, GET_POSTS, TEXT_POSTS, IMAGE_POSTS, VIDEO_POSTS } from '../config/constants';
+import { BASE_URL, API_KEY, SESSION_ID, GET_POSTS, TEXT_POSTS, IMAGE_POSTS, VIDEO_POSTS, COMMENTS_VIEW, POST_ID } from '../config/constants';
 import { VideoPost } from '../entities/VideoPost';
 import { ImagePost } from '../entities/ImagePost';
 import { TextPost } from '../entities/TextPost';
+import { Comments } from '../entities/Comments';
 
 class PostService {
     getPosts = () => {
@@ -17,7 +18,7 @@ class PostService {
             return response.json();
         })
         .then((posts) => {
-           return posts.map((post)=> {
+           return posts.map((post) => {
             if (post.type === 'video'){
 
                 const { videoUrl, id, dateCreated, userId, userDisplayName, type, commentsNum } = post;
@@ -31,6 +32,25 @@ class PostService {
                 const { text, id, dateCreated, userId, userDisplayName, type, commentsNum } = post;
                 return new TextPost(text, id, dateCreated, userId, userDisplayName, type, commentsNum)
             }
+            })
+        })
+    }
+    getComments = (postId) => {
+        return fetch(`${BASE_URL}${COMMENTS_VIEW}${POST_ID}${postId}`, {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'Key': API_KEY,
+                'SessionId': SESSION_ID
+            }
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((comments) => {
+            return comments.map((comment) => {
+                const { id, dateCreated, body, postId, authorName, authorId} = comment;
+                return new Comments(id, dateCreated, body, postId, authorName, authorId)
             })
         })
     }

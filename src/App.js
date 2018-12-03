@@ -3,6 +3,7 @@ import './App.css';
 // import Modal from "react-responsive-modal";
 import 'materialize-css/dist/css/materialize.min.css';
 // import ReactDOM from 'react-dom';
+import { HashRouter } from "../node_modules/react-router-dom";
 
 //COMPONENTS
 import { Header } from './view/Header';

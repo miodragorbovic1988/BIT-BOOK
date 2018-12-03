@@ -12,4 +12,8 @@ const IMAGE_POSTS = '/api/ImagePosts/';
 
 const VIDEO_POSTS = '/api/VideoPosts/';
 
-export { BASE_URL, SESSION_ID, API_KEY, GET_POSTS, TEXT_POSTS, IMAGE_POSTS, VIDEO_POSTS }
+const COMMENTS_VIEW = '/api/Comments';
+
+const POST_ID = '?postId=';
+
+export { BASE_URL, SESSION_ID, API_KEY, GET_POSTS, TEXT_POSTS, IMAGE_POSTS, VIDEO_POSTS, COMMENTS_VIEW, POST_ID }
