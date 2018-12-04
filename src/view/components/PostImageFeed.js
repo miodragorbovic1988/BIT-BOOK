@@ -1,4 +1,6 @@
 import React from 'react';
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import { SinglePagePost } from './SinglePagePost';
 
 const PostImageFeed = (props) => {
 
@@ -22,7 +24,14 @@ const PostImageFeed = (props) => {
             </div>
 
             <div className="post-comments">
-                {props.post.commentsNum} comments
+                {props.post.commentsNum} 
+                <BrowserRouter> 
+                <Link to={{
+                    pathname:`${props.postId}/singlepagepost`
+                    }}>comments</Link>
+
+                    <Route path="/singlepagepost/postId" component={SinglePagePost}/>
+                </BrowserRouter>
             </div>
         </div>
     )

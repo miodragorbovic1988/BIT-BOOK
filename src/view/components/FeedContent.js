@@ -21,7 +21,7 @@ class FeedContent extends Component {
 
     loadPosts() {
         postService.getPosts()
-        .then(posts => this.setState({ posts })); 
+        .then(posts => this.setState({ posts }));
     }
 
     render() {
