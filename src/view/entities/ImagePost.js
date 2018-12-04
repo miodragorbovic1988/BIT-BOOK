@@ -7,6 +7,7 @@ class ImagePost {
         this.userDisplayName = userDisplayName;
         this.type = type;
         this.commentsNum = commentsNum;
+        this.id = id;
     }
 }
 

@@ -1,23 +1,18 @@
 import React from 'react';
-// import Modal from "react-responsive-modal";
-// import PostTextFeed from './components/PostTextFeed';
-// import PostVideoFeed from './components/PostVideoFeed';
-// import PostImageFeed from './components/PostImageFeed';
-// import ModalFeed from './components/ModalFeed';
+import { Route, Switch } from 'react-router-dom';
 import { Feed } from './components/Feed';
+import { SinglePagePost } from './components/SinglePagePost';
 
 const Main = () => {
-
     return (
         <div className="mainContent">
-            <Feed />
-            {/* NOTHING IN FEED... */}
-            {/* <PostVideoFeed />
-            <PostTextFeed />
-            <PostImageFeed />
-            <ModalFeed /> */}
+            <Switch>
+                {/* /post/333 */}
+                <Route path="/post/:type/:postId" component={SinglePagePost} />
+                <Route path="/feed" component={Feed} />
+                <Route path="/" component={Feed} />
+            </Switch>
         </div>
-        
     )
 }
 
