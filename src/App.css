@@ -10,7 +10,7 @@
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  padding-top:20%;
+  padding-top:5%;
 }
 main {
   flex: 1 0 auto;
@@ -46,6 +46,8 @@ main {
   height:200px;
   padding-top:10%;
   background-color:#d6f0ff;
+  padding-left:5%;
+  font-size:20px;
   
 }
 /* IMAGE FEED */
@@ -87,7 +89,9 @@ main {
   float:left;
   padding-left:2%;
   padding-top:2%;
-  font-size:22px;
+  font-size:16px;
+  text-transform: uppercase;
+  
 }
 /* NAV */
 
@@ -120,24 +124,41 @@ nav{
 /* 
 CREATE POST */
 .create-post{
-  border:2px solid black;
+  border:2px solid rgb(203, 233, 250);
   position:fixed;
   bottom:0px;
   right:20px;
   padding:10px;
+  background-color:#e7f3fa;
+  border-radius:5%;
 }
 .new-post {
   width:100px;
   height:100px;
   border-radius:50%;
-  border:2px solid black;
+  border:2px solid rgb(52, 108, 141);
   font-size:22px;
   display:flex;
+  background-color:#d6f0ff;
+  color:rgb(52, 108, 141);
+
+  -webkit-box-shadow: 18px 23px 20px -12px rgba(0,0,0,0.86);
+-moz-box-shadow: 18px 23px 20px -12px rgba(0,0,0,0.86);
+box-shadow: 18px 23px 20px -12px rgba(0,0,0,0.86);
 }
 .new-post div {
   margin:auto;
   text-align: center;
   line-height: 1.2;
+  
+}
+.post-comments {
+  float:right;
+  padding-right:2%;
+  padding-top:2%;
+  text-transform: uppercase;
+  
+
 }
 
 /* FOOTER */

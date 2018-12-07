@@ -1,16 +1,18 @@
 import React from 'react';
+import { Route, Link } from "react-router-dom";
+import { SinglePagePost } from './SinglePagePost';
 
-const PostTextFeed = ({post}) => {
+const PostTextFeed = ({ post }) => {
     const { text, type, commentsNum } = post
 
     return (
         <div className="post-text">
-            
+
             <div className="user-displayed-data">
 
                 <div className="user-feed-photo">
 
-                    </div>
+                </div>
 
             </div>
 
@@ -21,9 +23,9 @@ const PostTextFeed = ({post}) => {
                 {type} post
             </div>
 
-            
+
             <div className="post-comments">
-                {commentsNum} comments
+                {commentsNum}
             </div>
         </div>
     )

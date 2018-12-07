@@ -24,8 +24,8 @@ const PostImageFeed = (props) => {
             </div>
 
             <div className="post-comments">
-                {props.post.commentsNum}
-                <Link to={"/post/image/" + props.post.id}>comments</Link>
+                <Link to={"/post/image/" + props.post.id}>
+                    {props.post.commentsNum} comments</Link>
             </div>
         </div>
     )
